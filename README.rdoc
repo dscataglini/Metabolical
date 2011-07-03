@@ -17,6 +17,13 @@ Whenever you feel like adding a column to a table ask yourself if what you reall
   user.metas['active'] = true
   user.metas['active'].data #=> true
   
+  User.with_meta('active') #=> all users with some metadata keyed as 'active'
+  User.with_meta_data('active', true) #=> all user with metadata with key 'active' and set to true
+  User.without_meta('asshole') #=> all users that don't have a metadata keyed as 'asshole'.
+
+Without_meta is an expensive query. 
+It needs to find all the records that match and remove them from the possible list of results.
+  
 == Notes
 
 Metabolical will need you to run the following migration
