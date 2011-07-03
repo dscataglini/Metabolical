@@ -14,10 +14,8 @@ Whenever you feel like adding a column to a table ask yourself if what you reall
   end
   
   user = User.new
-  user.meta['active'] = true
-  user.meta['active'] #=> true
-  user.metas['roles'] << 'admin'
-  user.metas['roles'] #=> ['admin']
+  user.metas['active'] = true
+  user.metas['active'].data #=> true
   
 == Notes
 
