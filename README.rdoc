@@ -1,0 +1,32 @@
+= Metabolical
+
+Metabolical is an ActiveRecord Model & mixin that adds metadata to your AR classes.
+Whenever you feel like adding a column to a table ask yourself if what you really want is just some metadata.
+
+== Install
+
+  gem install metabolical
+
+== Usage
+
+  class User < ActiveRecord::Base
+    metabolize!
+  end
+  
+  user = User.new
+  user.meta['active'] = true
+  user.meta['active'] #=> true
+  user.metas['roles'] << 'admin'
+  user.metas['roles'] #=> ['admin']
+  
+== Notes
+
+Metabolical will need you to run the following migration
+
+  create_table :meta_data, :force => true do |t|
+    t.integer :metabolized_id
+    t.string  :metabolized_type
+    t.string  :key
+    t.text    :data
+    t.timestamps
+  end
