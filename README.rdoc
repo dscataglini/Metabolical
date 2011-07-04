@@ -35,3 +35,5 @@ Metabolical will need you to run the following migration
     t.text    :data
     t.timestamps
   end
+  
+  add_index :meta_data, [:metabolized_id, :metabolized_type, :key]
