@@ -58,8 +58,9 @@ class MetabolicalTest < Test::Unit::TestCase
     context "named scopes" do
       setup do
         @foo_user = User.create(:name => 'foo_user', :metas => [Metabolical::MetaDatum.new(:key => "foo", :data => "bar")])
-        @bar_user = User.create(:name => 'bar_user', :metas => [Metabolical::MetaDatum.new(:key => "bar", :data => "baz"),
-                                          Metabolical::MetaDatum.new(:key => "fuu", :data => "bar")])
+        @bar_user = User.create(:name => 'bar_user', 
+                                :metas => [Metabolical::MetaDatum.new(:key => "bar", :data => "baz"),
+                                           Metabolical::MetaDatum.new(:key => "fuu", :data => "bar")])
         @true_user = User.create(:name => 'true_user', :metas => [Metabolical::MetaDatum.new(:key => "bar", :data => true)])
       end
       
@@ -86,11 +87,6 @@ class MetabolicalTest < Test::Unit::TestCase
         assert_equal [@foo_user], User.without_meta("bar")
       end
       
-      
-
     end
-    
-
   end
-  
 end

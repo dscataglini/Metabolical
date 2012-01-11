@@ -22,8 +22,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('activerecord',  '>= 2.1.2')
-  s.add_dependency('activesupport', '>= 2.1.2')
-  s.add_dependency('activemodel',   '>= 2.1.2')
-  s.add_dependency('arel',          '~> 2.0.10')
-  s.add_dependency('tzinfo',        '~> 0.3.23')
+
 end
