@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Metabolical::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Diego Scataglini"]
-  s.email       = ["diego@junivi.com"]
+  s.email       = ["dwebsubmit@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{This is an ActiveRecord Model & mixin to add meta data to any AR object}
   s.description = %q{This is an ActiveRecord Model & mixin to add meta data to any AR object}
@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('activerecord',  '>= 2.1.2')
+  s.add_dependency('activerecord',  '>= 5.0')
 
 end

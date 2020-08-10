@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'sqlite3'
 require 'active_record'
-require 'test/unit'
-require 'shoulda'
+require 'minitest/autorun'
 
 TEST_ROOT       = File.expand_path(File.dirname(__FILE__))
 MODELS_ROOT     = TEST_ROOT + "/models"
