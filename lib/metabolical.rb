@@ -8,7 +8,12 @@ module Metabolical
   
   module ClassMethods
     def metabolize!
-      include Metabolical::Scopes
+      if self.respond_to?(:named_scope)
+        include Metabolical::AR3Scopes
+      else
+        include Metabolical::AR4Scopes
+      end
+
       class_eval do
         has_many :metas, :as => :metabolized, :class_name => 'Metabolical::MetaDatum' do
           def [](key)
