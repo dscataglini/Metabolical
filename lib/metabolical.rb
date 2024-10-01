@@ -18,7 +18,11 @@ module Metabolical
         has_many :metas, :as => :metabolized, :class_name => 'Metabolical::MetaDatum' do
           def [](key)
             owner = (self.respond_to?(:proxy_association) ? self.proxy_association.owner : self.proxy_owner)
-            find_by_key(key) || owner.metas.detect{|m| m.key == key} || owner.metas.build(:key => key)
+            if owner.metas.loaded?
+              owner.metas.detect{|m| m.key == key}
+            else
+              find_by_key(key) || owner.metas.detect{|m| m.key == key} || owner.metas.build(:key => key)
+            end
           end
           
           def []=(key, data)
