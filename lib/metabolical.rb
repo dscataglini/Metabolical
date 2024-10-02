@@ -2,6 +2,8 @@ require 'metabolical/meta_datum'
 require 'metabolical/scopes'
 
 module Metabolical
+  class Error < StandardError; end
+  
   def self.included(klass)
     klass.extend ClassMethods
   end  
