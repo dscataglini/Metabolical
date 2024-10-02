@@ -13,8 +13,6 @@ Gem::Specification.new do |spec|
   spec.description = %q{This is an ActiveRecord Model & mixin to add meta data to any AR object}
   spec.license     = "MIT"
   spec.required_ruby_version = '>= 3.2.0'
-  
-  spec.rubyforge_project = "metabolical"
 
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
