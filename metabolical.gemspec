@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Diego Scataglini"]
   spec.email       = ["dwebsubmit@gmail.com"]
   spec.homepage      = "https://github.com/dscataglini/Metabolical"
-  spec.summary     = %q{This is an ActiveRecord Model & mixin to add meta data to any AR object}
+  spec.summary     = %q{Add arbitrary meta data to any AR object}
   spec.description = %q{This is an ActiveRecord Model & mixin to add meta data to any AR object}
   spec.license     = "MIT"
   spec.required_ruby_version = '>= 3.2.0'
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency('activerecord',  '>= 6.0.0')
+  spec.add_runtime_dependency 'activerecord', '~> 6.0', '>= 6.0.0'
   spec.add_development_dependency "bundler", "~> 2.1"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
