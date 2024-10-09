@@ -23,6 +23,21 @@ describe Metabolical do
         @user.metas['foo'] = 'bar'
         assert_equal 'bar', @user.metas['foo'].data
       end
+
+      it "should be able to assign multiple metas before saving and retrieving them after save" do
+        @user.metas['foo'] = 'bar'
+        @user.metas['baz'] = 'fuu'
+        @user.save
+        assert_equal 'bar', @user.metas['foo'].data
+        assert_equal 'fuu', @user.metas['baz'].data
+      end
+
+      it "should be able to assign multiple metas before saving and retrieving them before save" do
+        @user.metas['foo'] = 'bar'
+        @user.metas['baz'] = 'fuu'
+        assert_equal 'bar', @user.metas['foo'].data
+        assert_equal 'fuu', @user.metas['baz'].data
+      end
     end
     
     describe "saved record" do
